@@ -2,15 +2,49 @@
 @import "mixins.scss";
 //<FONTS>========================================================
 @import "fonts.scss";
+
+
+
+
+//WRAPPER
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  &._loaded{
+
+  }
+}
 //<VARIABLES>==========================================================================================================
+$minwidth: 320px;
+$maxwidth: 970;
+$md1: $maxwidth + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+
 //<ADD FONTTS>==================================================================================================================
 //&subset=cyrilic-ext
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700&subset=cyrilic-ext");
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,700,700italic&subset);
 //<FONT DEFAULT>==================================================================================================================
-$fontfamily: "PTSans";
+$fontfamily: "PT Sans";
 
 //CONTAINER
 ._container {
   margin: 0 auto;
-  width: 950px;
+  max-width: $maxwidth + px;
+};
+
+//DEFAULT PROPERTIES RESET DEFAULT STYLE CSS
+@import "reset.scss";
+body {
+  color: #000;
+  font-family: $fontfamily;
+  font-size: 14px;
 }
+
+
+
+@import "header.scss";
